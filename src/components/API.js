@@ -5,23 +5,45 @@ import { CgWebsite, CgInstagram, CgPhone } from "react-icons/cg";
 import { HiOutlineMail } from "react-icons/hi";
 function API() {
   const [tuners, setTuners] = useState([]);
+  const [searchTuner, setSearchTuner] = useState("");
+  const [filterTuners, setFilterTuners] = useState([]);
   const url = "https://get-me-tuned-api.herokuapp.com/";
   useEffect(() => {
-    Axios.get("https://get-me-tuned-api.herokuapp.com/tuners/random").then(
+    Axios.get("https://get-me-tuned-api.herokuapp.com/tuners").then(
       (response) => {
         setTuners(response.data);
       }
     );
   }, []);
+  // Tutorial: https://invidious.kavin.rocks/watch?v=Q8JyF3wpsHc
+  useEffect(() => {
+    setFilterTuners(
+      tuners.filter((tuner) => {
+        return tuner.name.toLowerCase().includes(searchTuner.toLowerCase());
+      })
+    );
+  }, [searchTuner, tuners]);
+
   return (
     <div>
       <div className="overflow-y-auto h-screen bg-gray-900 max-h-full md:max-h-screen md:object-contain text-black p-4 ">
         <h1 className="bg-yellow-500 text-center text-2xl rounded text-black p-2">
           <b>Meet Tuner Gang</b>
         </h1>
-        {tuners.map((value) => {
+
+        <input
+          class="my-4 focus:border-light-blue-500 focus:ring-1 focus:ring-light-blue-500 focus:outline-none w-full text-sm text-black placeholder-gray-500 border border-yellow-500 rounded-md py-2 pl-10"
+          type="text"
+          aria-label="Filter Tuner"
+          placeholder="Find Tuner"
+          onChange={(e) => setSearchTuner(e.target.value)}
+        />
+        {filterTuners.map((value, key) => {
           return (
-            <figure class="md:flex bg-gray-200 rounded-xl p-4 my-4 mx-5">
+            <figure
+              class="md:flex bg-gray-200 rounded-xl p-4 my-4 mx-5"
+              key={key}
+            >
               <img
                 class="w-32 h-32 md:w-48 md:h-48 rounded-full mx-auto md:mx-0"
                 src={url + value.image}
