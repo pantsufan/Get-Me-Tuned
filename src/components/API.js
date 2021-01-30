@@ -6,6 +6,7 @@ import { HiOutlineMail } from "react-icons/hi";
 import { css } from "@emotion/core";
 //React Spinners: https://www.npmjs.com/package/react-spinners
 import HashLoader from "react-spinners/HashLoader";
+
 const override = css`
   display: block;
   padding-top: 50px;
