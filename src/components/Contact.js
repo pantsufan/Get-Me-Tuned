@@ -8,10 +8,10 @@ function Contact() {
 
     emailjs
       .sendForm(
-        "service_jucu95v",
-        "template_nx45lin",
+        `${process.env.REACT_APP_EMAILJS_SERVICE}`,
+        `${process.env.REACT_APP_EMAILJS_TEMPLATE}`,
         e.target,
-        "user_t7PKMxUvkMR8yXZj1mtEJ"
+        `${process.env.REACT_APP_EMAILJS_USER}`
       )
       .then(
         (result) => {
