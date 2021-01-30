@@ -2,6 +2,8 @@ import React from "react";
 import API from "./API";
 import "./Header.css";
 import Typical from "react-typical";
+import Contact from "./Contact";
+import rx7 from "../images/rx7.gif";
 export default function Header() {
   return (
     <div
@@ -25,7 +27,7 @@ export default function Header() {
       >
         <img
           className="mx-auto pt-0 md:pt-10 md:rounded py-4"
-          src="https://media1.tenor.com/images/0b2f8f4c34bb02bfcdfd77f04824978a/tenor.gif"
+          src={rx7}
           alt="Mazada Rx7 Gif"
         />
         <h1
@@ -37,11 +39,11 @@ export default function Header() {
           <Typical
             className=" bg-black inline-block rounded-3xl p-5 mx-5 text-5xl md:text-4xl lg:text-9xl text-center text-yellow-500"
             steps={[
-              "Meet  Tuners",
+              "Meet Tuners",
               1000,
               "Find Tuners",
               500,
-              "Go Tuned",
+              "Get Tuned",
               500,
               ,
               "#Tuned Culture",
@@ -54,9 +56,7 @@ export default function Header() {
         <br />
       </div>
       <API />
-      <div className="h-screen bg-black max-h-full md:max-h-screen text-white p-4 ">
-        Contact and About us
-      </div>
+      <Contact />
     </div>
   );
 }
