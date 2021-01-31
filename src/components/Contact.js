@@ -59,7 +59,7 @@ function Contact() {
         >
           <form className="contact-form" onSubmit={sendEmail}>
             <h3 className="font-extrabold text-2xl my-4">
-              Missing Your Fvaourite Tuner? Send Us The Request
+              Missing Your Favourite Tuner? Send Us The Request
             </h3>
             <label className="font-bold text-xl my-4">Tuner name</label> <br />
             <input

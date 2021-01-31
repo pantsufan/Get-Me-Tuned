@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { CgWebsite, CgInstagram, CgPhone } from "react-icons/cg";
 import { HiOutlineMail } from "react-icons/hi";
 import { css } from "@emotion/core";
+import "./Scroll.css";
 //React Spinners: https://www.npmjs.com/package/react-spinners
 import HashLoader from "react-spinners/HashLoader";
 
