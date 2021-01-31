@@ -15,8 +15,7 @@ function Contact() {
       )
       .then(
         (result) => {
-          //console.log(result.text);
-          Swal.fire("Good job!", "Your request is submitted!", "success");
+          Swal.fire("Good job!", "Your request was submitted!", "success");
         },
         (error) => {
           console.log(error.text);
@@ -25,36 +24,36 @@ function Contact() {
     e.target.reset();
   }
   return (
-    <div className=" bg-black max-h-full md:max-h-screen text-white p-4 ">
+    <div className=" bg-black max-h-full md:max-h-screen  p-4 text-white">
       <div class="grid grid-row-4 md:gird-cols-4 gap-4 m-2">
         <div
-          class="row-span-2 md:col-span-2 p-4 rounded-lg "
-          style={{
-            background: "#091c29",
-          }}
+          class="bg-yellow-500 row-span-2 md:col-span-2 p-4 rounded-lg text-black"
+          // style={{
+          //   background: "#091c29",
+          // }}
         >
           <h3
-            className="font-bold"
+            className="font-extrabold text-2xl"
             style={{
-              fontFamily: "Graduate",
+              fontFamily: "Baloo Chettan 2",
             }}
           >
             About The Project:
           </h3>
           <hr
+            className="py-2"
             style={{
-              width: "160px",
+              width: "0px",
             }}
           />
-          <br />
-          <p>
+          <p className="font-blod ">
             This project began as a dream and then into reality within a month.
           </p>
         </div>
         <div
           class="bg-gray-400 row-span-2 md:col-span-2 text-gray-800 p-4 rounded-lg"
           style={{
-            fontFamily: "Graduate",
+            fontFamily: "Baloo Chettan 2",
           }}
         >
           <form className="contact-form" onSubmit={sendEmail}>
@@ -78,7 +77,7 @@ function Contact() {
             <span className="inline-block">* We Don't Send Spam emails</span>
             <br />
             <input
-              className="font-bold text-xl rounded-xl my-2 py-2 px-10 bg-blue-500 text-white hover:bg-white hover:text-blue-500 cursor-pointer"
+              className="font-bold text-xl rounded-xl my-2 py-2 px-10 bg-yellow-500 text-black hover:bg-black hover:text-yellow-500 cursor-pointer"
               type="submit"
               value="Send"
             />
@@ -86,9 +85,20 @@ function Contact() {
           </form>
         </div>
       </div>
-      <div className="mx-auto text-center py-2">
+      <div className="mx-auto text-center py-2 inline">
         <img src={footer} className="mx-auto w-32 h-full" alt="footer car" />
-        <h3 className="font-bold">&#169; Kninja | 2021</h3>
+        <h3 className="font-bold">
+          &#169;
+          <a
+            className="mx-1 text-center hover:text-yellow-500"
+            href="https://github.com/pantsufan"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Kninja
+          </a>
+          <span className="mx-1">| 2021</span>
+        </h3>
       </div>
     </div>
   );

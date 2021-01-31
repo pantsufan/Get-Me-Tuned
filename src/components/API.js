@@ -42,7 +42,7 @@ function API() {
     <div>
       <div className="overflow-y-auto h-screen bg-gray-900 max-h-full md:max-h-screen md:object-contain text-black p-4 ">
         <h1 className="bg-yellow-500 text-center text-2xl rounded text-black p-2">
-          <b>Meet Tuner Gang</b>
+          <b>Meet Our Tuner Gang</b>
         </h1>
 
         <input
@@ -65,6 +65,9 @@ function API() {
               <figure
                 class="md:flex bg-gray-200 rounded-xl p-4 my-4 mx-5"
                 key={key}
+                style={{
+                  fontFamily: "Baloo Chettan 2",
+                }}
               >
                 <img
                   class="w-32 h-32 md:w-48 md:h-48 rounded-full mx-auto md:mx-0"
